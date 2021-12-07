@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net452;net5</TargetFrameworks>
+    <!-- Fody suffix is on the package by convention, but not on the namespaces since there will be no compile time reference to Fody -->
+    <RootNamespace>Tracer.OpenTelemetry</RootNamespace>
+    <AssemblyName>Tracer.OpenTelemetry</AssemblyName>
+    <!-- Do not weave _this_ project just because it references Fody. -->
+    <DisableFody>true</DisableFody>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>Enable</Nullable>
+	
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <PackageId>Tracer.OpenTelemetry.Fody</PackageId>
+    <Authors>ndrwrbgs</Authors>
+    <Company />
+    <Product />
+    <Copyright>Copyright 2021</Copyright>
+
+    <!-- Sync with code constants for the ActivitySource -->
+    <AssemblyVersion>3.3.1</AssemblyVersion>
+    <FileVersion>$(AssemblyVersion)</FileVersion>
+    <Version>3.3.1</Version>
+    
+    <Description>Tracer.Fody plugin for instrumenting with OpenTelemetry (System.Diagnostic.Activity APIs)</Description>
+    <PackageReleaseNotes>Initial</PackageReleaseNotes>
+    
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ndrwrbgs/Tracer.OpenTelemetry.Fody</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ndrwrbgs/Tracer.OpenTelemetry.Fody</RepositoryUrl>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>strongname.snk</AssemblyOriginatorKeyFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageTags>OpenTelemetry Fody</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2021.3.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="OpenTelemetry.Api" Version="1.1.0" />
+    <PackageReference Include="Tracer.Fody" Version="3.3.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
