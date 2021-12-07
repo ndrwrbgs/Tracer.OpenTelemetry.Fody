@@ -12,7 +12,7 @@
     <LangVersion>9.0</LangVersion>
     <Nullable>Enable</Nullable>
 	
-  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   
   <PropertyGroup>
