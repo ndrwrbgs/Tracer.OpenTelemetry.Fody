@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452;net5</TargetFrameworks>
     <!-- Fody suffix is on the package by convention, but not on the namespaces since there will be no compile time reference to Fody -->
     <RootNamespace>Tracer.OpenTelemetry</RootNamespace>
     <AssemblyName>Tracer.OpenTelemetry</AssemblyName>
@@ -38,6 +38,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
+    <PackageTags>OpenTelemetry Fody</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
