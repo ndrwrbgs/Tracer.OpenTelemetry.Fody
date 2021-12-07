@@ -1,5 +1,5 @@
 # Tracer.OpenTelemetry.Fody
-[![NuGet](https://img.shields.io/nuget/v/Tracer.OpenTracing.Fody.svg)](https://www.nuget.org/packages/Tracer.OpenTracing.Fody)
+[![NuGet](https://img.shields.io/nuget/v/Tracer.OpenTelemetry.Fody.svg)](https://www.nuget.org/packages/Tracer.OpenTelemetry.Fody)
 
 Auto-instrumentation for OpenTelemetry of source code
 
