@@ -14,6 +14,9 @@
         private static readonly ActivitySource ActivityTracer = new(ActivitySourceConstants.Name, ActivitySourceConstants.Version);
         private readonly string? name;
 
+        /// <summary>
+        ///     Called by Tracer.Fody, not the end user. A <see cref="LoggerAdapter"/> is created for every class/type.
+        /// </summary>
         [PublicAPI /* defined by Tracer.Fody */]
         public LoggerAdapter(Type? containingType)
         {
@@ -22,7 +25,9 @@
 
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member - https://github.com/dotnet/roslyn/issues/54103
         public partial void TraceEnter(
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
             string? methodInfo,
             Tuple<string, string>?[]? configParameters,
             string?[]? paramNames,
@@ -40,7 +45,9 @@
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member - https://github.com/dotnet/roslyn/issues/54103
         public partial void TraceLeave(
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
             string? methodInfo,
             Tuple<string, string>?[]? configParameters,
             long startTicks,

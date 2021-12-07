@@ -38,6 +38,9 @@ namespace TracerAttributes
         }
     }
     
+    /// <summary>
+    ///     Tells Tracer.Fody to not weave this target at all
+    /// </summary>
     [PublicAPI]
     [AttributeUsage(
         validOn: AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Parameter, 
@@ -47,6 +50,10 @@ namespace TracerAttributes
     {
     }
 
+    /// <summary>
+    ///     Tells Tracer.Fody to not pass the return value to our implementation, which means the return
+    ///     value will never be logged or attached to an <see cref="System.Diagnostics.Activity"/>
+    /// </summary>
     [PublicAPI]
     [AttributeUsage(
         validOn: AttributeTargets.Method | AttributeTargets.Property, 
@@ -56,12 +63,30 @@ namespace TracerAttributes
     {
     }
 
+    /// <summary>
+    ///     What items to trace, based on visibility. For use with <see cref="TraceOn"/> and related attributes
+    /// </summary>
     [PublicAPI]
     public enum TraceTarget
     {
+        /// <summary>
+        ///     Only public visibility
+        /// </summary>
         Public,
+
+        /// <summary>
+        ///     Internal or higher visibility
+        /// </summary>
         Internal,
+
+        /// <summary>
+        ///     Protected or higher visibility
+        /// </summary>
         Protected,
+
+        /// <summary>
+        ///     Private or higher visibility
+        /// </summary>
         Private
     }
 }

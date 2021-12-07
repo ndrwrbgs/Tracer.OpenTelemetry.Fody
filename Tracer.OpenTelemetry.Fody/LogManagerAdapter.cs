@@ -9,6 +9,10 @@
     [PublicAPI]
     public static class LogManagerAdapter
     {
+        /// <summary>
+        ///     Defined and used by Tracer.Fody
+        /// </summary>
+        [PublicAPI]
         public static LoggerAdapter GetLogger(Type type)
         {
             return new LoggerAdapter(type);

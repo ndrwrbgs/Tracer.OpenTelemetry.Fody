@@ -9,6 +9,9 @@
     [PublicAPI]
     public partial class LoggerAdapter
     {
+        /// <summary>
+        ///     Called by Tracer.Fody, not the end user. Called at the start of the method. Woven into the `{` on the method.
+        /// </summary>
         public partial void TraceEnter(
             // Using conservative nullability for first-pass. TODO [simplify] confirm nullability contracts from Tracer.Fody
             string? methodInfo,
@@ -16,6 +19,9 @@
             string?[]? paramNames,
             object?[]? paramValues);
 
+        /// <summary>
+        ///     Called by Tracer.Fody, not the end user. Called at the start of the method. Woven into the `}` on the method.
+        /// </summary>
         public partial void TraceLeave(
             // Using conservative nullability for first-pass. TODO [simplify] confirm nullability contracts from Tracer.Fody
             string? methodInfo,
