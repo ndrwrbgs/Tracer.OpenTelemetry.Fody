@@ -49,17 +49,17 @@
             object?[]? paramValues)
         {
             // TODO [enhance] .NET team would rather we store the activeScope from TraceEnter as a variable, than use Activity.Current. Postponing that change for now due to complexity, can revisit if we see performance issues.
-            var activeScope = Activity.Current;
-            if (activeScope == null) return;
+            var activity = Activity.Current;
+            if (activity == null) return;
             
-            FindAndRecordAnyUncaughtException(activeScope, paramNames, paramValues);
+            FindAndRecordAnyUncaughtException(activity, paramNames, paramValues);
             
             if (ShouldIncludeReturnValue(configParameters))
             {
-                IncludeReturnValueAsTag(activeScope, paramNames, paramValues);
+                IncludeReturnValueAsTag(activity, paramNames, paramValues);
             }
 
-            activeScope.Dispose();
+            activity.Dispose();
         }
 
         private static void FindAndRecordAnyUncaughtException(Activity? activeScope, string?[]? paramNames, object?[]? paramValues)
