@@ -22,8 +22,7 @@
         {
             this.name = containingType != null ? (containingType.Name + ".") : null;
         }
-
-
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member - https://github.com/dotnet/roslyn/issues/54103
         public partial void TraceEnter(

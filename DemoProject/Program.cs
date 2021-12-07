@@ -1,9 +1,8 @@
-﻿using System;
-
-namespace DemoProject
+﻿namespace DemoProject.OpenTelemetry
 {
-    using OpenTelemetry;
-    using OpenTelemetry.Trace;
+    using System;
+    using global::OpenTelemetry;
+    using global::OpenTelemetry.Trace;
     using Tracer.OpenTelemetry;
     using TracerAttributes;
 
