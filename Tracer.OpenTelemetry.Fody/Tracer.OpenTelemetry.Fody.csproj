@@ -28,19 +28,35 @@
     <Description>Tracer.Fody plugin for instrumenting with OpenTelemetry (System.Diagnostic.Activity APIs)</Description>
     <PackageReleaseNotes>Initial</PackageReleaseNotes>
     
-    <PackageLicenseUrl>https://github.com/ndrwrbgs/Tracer.OpenTelemetry.Fody/blob/main/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/ndrwrbgs/Tracer.OpenTelemetry.Fody</PackageProjectUrl>
-    <!-- OpenTelemetry icon -->
-    <PackageIconUrl>https://api.nuget.org/v3-flatcontainer/opentelemetry/1.2.0-rc1/icon</PackageIconUrl>
     <RepositoryUrl>https://github.com/ndrwrbgs/Tracer.OpenTelemetry.Fody</RepositoryUrl>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>strongname.snk</AssemblyOriginatorKeyFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2021.3.0">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="OpenTelemetry.Api" Version="1.2.0-rc1" />
-    <PackageReference Include="Tracer.Fody" Version="[3,4)" />
+    <PackageReference Include="OpenTelemetry.Api" Version="1.1.0" />
+    <PackageReference Include="Tracer.Fody" Version="3.3.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
