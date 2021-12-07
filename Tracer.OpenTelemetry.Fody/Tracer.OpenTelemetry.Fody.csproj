@@ -35,6 +35,7 @@
     <AssemblyOriginatorKeyFile>strongname.snk</AssemblyOriginatorKeyFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
